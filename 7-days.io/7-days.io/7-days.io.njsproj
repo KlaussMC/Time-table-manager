@@ -19,8 +19,8 @@
     <OutputPath>.</OutputPath>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
-    <NodejsPort>1337</NodejsPort>
-    <StartWebBrowser>true</StartWebBrowser>
+    <NodejsPort>80</NodejsPort>
+    <StartWebBrowser>False</StartWebBrowser>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,12 +38,16 @@
     </Compile>
     <Compile Include="routes\users.js" />
     <Content Include="package.json" />
+    <Content Include="public\res\icons\favicon.ico" />
     <Content Include="public\res\wallpaper.jpg" />
     <Content Include="public\src\css\auth.css" />
     <Content Include="public\src\css\header.css">
       <SubType>Code</SubType>
     </Content>
     <Content Include="public\src\css\main.css" />
+    <Content Include="public\src\css\footer.css">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="README.md" />
     <Content Include="views\header.pug">
       <SubType>Code</SubType>
@@ -60,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="public\" />
+    <Folder Include="public\res\icons\" />
     <Folder Include="public\src\" />
     <Folder Include="public\res\" />
     <Folder Include="public\src\js\" />

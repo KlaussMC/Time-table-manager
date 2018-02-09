@@ -2,7 +2,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: "Segoe UI";
+  font-family: "Segoe UI", "Open Sans", Arial, Helvetica, sans-serif;
   --accent: #00B7FF;
   --darkaccent: #0095DD;
   outline: none;

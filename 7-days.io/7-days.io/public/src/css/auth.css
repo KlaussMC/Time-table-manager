@@ -4,9 +4,6 @@
   font-weight: normal;
   color: #333;
 }
-body {
-  
-}
 form#login {
   width: 90vw;
   position: relative;
@@ -37,6 +34,9 @@ form#login input {
   border: 1px solid var(--accent);
   border-radius: 5px;
   background: #fff;
+}
+form#login input:-webkit-auto-complete {
+  box-shadow: inset 100px #fff;
 }
 form#login input[type="submit"] {
   padding: 5px;

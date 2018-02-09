@@ -19,7 +19,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 // uncomment after placing the favicon in /public/res/icons
-//app.use(favicon(__dirname + '/public/res/icons/favicon.ico'));
+app.use(favicon(__dirname + '/public/res/icons/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -62,7 +62,7 @@ app.use(function (err, req, res, next) {
     });
 });
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 80);
 
 var server = app.listen(app.get('port'), function () {
     debug('Express server listening on port ' + server.address().port);
