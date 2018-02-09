@@ -1,0 +1,176 @@
+﻿h1 {
+  width: 100%;
+  text-align: center;
+  font-weight: normal;
+  color: #333;
+}
+body {
+  
+}
+form#login {
+  width: 90vw;
+  position: relative;
+  left: 5vw;
+  top: 5vh;
+  min-height: 40vh;
+  height: 60vh;
+  background: #ddd;
+  color: #333;
+  border-radius: 5px;
+}
+form#login #container * {
+  color: #555;
+}
+div#container {
+  top: 5vh;
+  position: absolute;
+  width: 80%;
+  left: 7.5%;
+}
+form#login .label{
+  font-weight: lighter;
+  padding-left: 20px;
+}
+form#login input {
+  padding: 5px;
+  width: 75vw;
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  background: #fff;
+}
+form#login input[type="submit"] {
+  padding: 5px;
+  width: 25vw;
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  background: #fff;
+  text-align: left;
+  padding-left: 20px;
+}
+form#login .acont {
+  position: absolute;
+  bottom: 5px;
+  float: left;
+  display: block;
+  width: 50%;
+
+}
+form#login .acont a {
+  position: relative;
+  bottom: 0px;
+  float: left;
+  display: block;
+  width: 50%;
+  text-align: center;
+}
+
+form#login {
+  width: 90vw;
+  position: relative;
+  left: 5vw;
+  top: 5vh;
+  height: 40vh;
+  background: #ddd;
+  color: #333;
+  border-radius: 5px;
+}
+form#login #container * {
+  color: #555;
+}
+div#container {
+  top: 5vh;
+  position: absolute;
+  width: 80%;
+  left: 7.5%;
+}
+form#login .label{
+  font-weight: lighter;
+  padding-left: 20px;
+}
+form#login input {
+  padding: 5px;
+  width: 75vw;
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  background: #fff;
+}
+form#login input[type="submit"] {
+  padding: 5px;
+  width: 25vw;
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  background: #fff;
+  text-align: left;
+  padding-left: 20px;
+}
+form#login .acont {
+  position: absolute;
+  bottom: 5px;
+  float: left;
+  display: block;
+  width: 50%;
+
+}
+form#login .acont a {
+  position: relative;
+  bottom: 0px;
+  float: left;
+  display: block;
+  width: 50%;
+  text-align: center;
+}
+
+form#signup {
+  width: 90vw;
+  position: relative;
+  left: 5vw;
+  top: 5vh;
+  height: 60vh;
+  background: #ddd;
+  color: #333;
+  border-radius: 5px;
+}
+
+form#signup #container * {
+  color: #555;
+}
+
+form#signup .label {
+  font-weight: lighter;
+  padding-left: 20px;
+}
+
+form#signup input {
+  padding: 5px;
+  width: 75vw;
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  background: #fff;
+}
+
+form#signup input[type="submit"] {
+  padding: 5px;
+  width: 25vw;
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  background: #fff;
+  text-align: left;
+  padding-left: 20px;
+}
+
+form#signup .acont {
+  position: absolute;
+  bottom: 5px;
+  float: left;
+  display: block;
+  width: 50%;
+}
+
+form#signup .acont a {
+  position: relative;
+  bottom: 0px;
+  float: left;
+  display: block;
+  width: 50%;
+  text-align: center;
+}

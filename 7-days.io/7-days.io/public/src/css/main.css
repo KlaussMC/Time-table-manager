@@ -1,0 +1,33 @@
+﻿* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Segoe UI";
+  --accent: #00B7FF;
+  --darkaccent: #0095DD;
+  outline: none;
+}
+
+body {
+  padding: 0px;
+  overflow-x: hidden;
+  /* background-image: url("/res/wallpaper.jpg");
+  background-size: 100%;*/
+  /* font: 16px "Lucida Grande", Helvetica, Arial, sans-serif; */
+}
+a {
+  color: var(--accent);
+}
+a:hover {
+  color: var(--darkaccent);
+}
+#cont {
+  background: #ddd;
+  position: relative;
+  width: 90vw;
+  left: 5vw;
+  height: 100vh;
+}
+p {
+  padding: 15px;
+}

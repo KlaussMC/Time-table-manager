@@ -1,0 +1,49 @@
+﻿doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/src/css/main.css')
+    link(rel='stylesheet', href='/src/css/header.css')
+    link(rel='stylesheet', href='/src/css/auth.css')
+    link(rel='stylesheet', href='/src/css/footer.css')
+    //auth styles all forms used for signup and login
+  body
+    nav.header
+      .cont
+        a(href="/")=title
+
+        div.account
+          if (!user)
+            div.login
+              a(href="/login") Login
+            div.signup
+              a(href="/signup") Sign Up
+          else
+            span= user
+    br#padbar
+    block content
+
+    //footer
+    //  .group
+    //    h3 This website is due to the following copyrights:
+    //    ul
+    //      li
+    //        a(href="https://nodejs.org") Node.js
+    //      li
+    //        a(href="https://npmjs.com") NPM
+    //      li
+    //        a() Microsoft Visual Studio
+    //
+    //  .group
+    //    h3 Other related links:
+    //    ul
+    //      li
+    //        a(href="/help") Our very own Help page
+    //      li
+    //        a(href="/login") Log In
+    //      li
+    //        a(href-"/signup") Sign Up
+    //      li
+    //        a(href="/about") About
+    //      li
+    //        a(href="/contact") Contact Us

@@ -1,0 +1,58 @@
+﻿  nav.header {
+    width: 100vw;
+    height: 50px;
+    background: var(--accent);
+    -webkit-user-select: none;
+    box-shadow: 0px 1px 2px #555;
+    position: fixed;
+    margin-bottom: 50px;
+    overflow: hidden;
+    z-index: 3;
+  }
+  #padbar {
+    font-size: 50px;
+    height: 50px;
+  }
+  nav.header .cont {
+    position: relative;
+    left: 15px;
+  }
+  
+  nav.header a {
+    color: #eee;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Segoe UI';
+    position: relative;
+    top: 7.5px;
+    text-decoration: none;
+  }
+
+  nav.header .account {
+    width: 25vw;
+    position: relative;
+    float: right;
+    font-weight: lighter;
+  }
+  nav.header .account * {
+    font-weight: lighter;
+  }
+  nav.header .account div {
+    position: relative;
+    display: block;
+    float: left;
+    text-align: center;
+    width: 50%;
+    height: 50px;
+  }
+  nav.header .account div:hover {
+    position: relative;
+    display: block;
+    float: left;
+    text-align: center;
+    width: 50%;
+    background: var(--darkaccent);
+  }
+  nav.header .account div:active {
+    padding: 2px 2px 0px 0px;
+  }

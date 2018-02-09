@@ -1,0 +1,23 @@
+﻿extends layout
+
+block content
+  form#login
+    h1 Login
+    br
+    div#container
+      .un
+        span.label Username
+        br
+        input(type="text", name="un", placeholder="Username")
+      br
+      .pw
+          span.label Password
+          br
+          input(type="password", name="pw", placeholder="Password")
+
+      br
+      input(type="submit", value="Login")
+
+    .acont
+      a(href="/signup") I don't have an account
+      a(href="/forgotPassword") Forgot Password

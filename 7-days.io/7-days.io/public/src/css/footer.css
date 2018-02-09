@@ -1,0 +1,18 @@
+﻿footer {
+  width: 100vw;
+  display: block;
+  position: relative;
+  float: left;
+  background: #ddd;
+  padding: 15px;
+}
+footer .group {
+  width: 50%;
+  text-align: center;
+  display: block;
+  float: left;
+  position: relative;
+}
+footer li {
+  list-style-type: none;
+}
