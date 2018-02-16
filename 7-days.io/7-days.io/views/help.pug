@@ -1,0 +1,8 @@
+﻿extends layout
+
+block content
+  h1 Help
+
+  form(action="/help/search", method="get")#search
+    input(type="search", placeholder="Seach for topics")
+    input(type="submit", value="Search")

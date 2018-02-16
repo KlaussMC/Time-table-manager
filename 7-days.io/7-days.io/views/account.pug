@@ -1,0 +1,11 @@
+﻿extends layout
+
+block content
+  if (user)
+    h1= user
+
+  else
+    h1 You need to 
+      a(href="/login") Log in 
+      label Or 
+      a(href="/signup") Sign Up 

@@ -174,3 +174,6 @@ form#signup .acont a {
   width: 50%;
   text-align: center;
 }
+form input .invalid {
+  border-color: red;
+}

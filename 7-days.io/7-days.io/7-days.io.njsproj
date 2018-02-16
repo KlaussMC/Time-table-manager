@@ -31,12 +31,6 @@
   <ItemGroup>
     <Compile Include="app.js" />
     <Compile Include="routes\index.js" />
-    <Compile Include="routes\signup.js" />
-    <Compile Include="routes\login.js">
-      <SubType>Code</SubType>
-      <TestFramework>ExportRunner</TestFramework>
-    </Compile>
-    <Compile Include="routes\users.js" />
     <Content Include="package.json" />
     <Content Include="public\res\icons\favicon.ico" />
     <Content Include="public\res\wallpaper.jpg" />
@@ -48,14 +42,23 @@
     <Content Include="public\src\css\footer.css">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="public\src\css\help.css">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="README.md" />
     <Content Include="views\header.pug">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\help.pug">
       <SubType>Code</SubType>
     </Content>
     <Content Include="views\index.pug" />
     <Content Include="views\layout.pug" />
     <Content Include="views\error.pug" />
     <Content Include="views\login.pug">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\account.pug">
       <SubType>Code</SubType>
     </Content>
     <Content Include="views\signup.pug">

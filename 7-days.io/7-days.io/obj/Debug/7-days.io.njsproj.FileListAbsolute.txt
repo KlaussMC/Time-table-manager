@@ -1,0 +1,3 @@
+C:\Users\Jacob\Google Drive\Coding\Repos\Time-table-manager\7-days.io\7-days.io\obj\Debug\7-days.io.njsprojResolveAssemblyReference.cache
+C:\Users\Jacob\Google Drive\Coding\Repos\Time-table-manager\7-days.io\7-days.io\obj\Debug\7-days.io.njsproj.CoreCompileInputs.cache
+C:\Users\Jacob\Google Drive\Coding\Repos\Time-table-manager\7-days.io\7-days.io\bin\Microsoft.NodejsTools.WebRole.dll

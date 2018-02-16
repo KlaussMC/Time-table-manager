@@ -1,32 +1,54 @@
 ﻿extends layout
 
 block content
-  form(method="POST")#signup
-    h1 Sign Up  
+  form(action="/signup", method="POST")#signup
+    h1 Sign Up
+
     div#container
       .un
-        span.label Username
+        span.label Email
         br
-        input(type="email", name="email", placeholder="Email")
+        if (data.email)
+          input(type="email", name="email", placeholder="Email").invalid
+          span= data.email
+
+        else
+          input(type="email", name="email", placeholder="Email")
+
       br
       .pw
-          span.label Password
-          br
+        span.label Username
+        br
+        if (data.un)
+          input(type="text", name="un", placeholder="Username").invalid
+          // span= un
+            
+        else
           input(type="text", name="un", placeholder="Username")
+            
       br
       .un
         span.label Password
         br
-        input(type="password", name="pw", placeholder="Password")
+        if (data.pw)
+          input(type="password", name="pw", placeholder="Password").invalid
+          // span= pw
+
+        else
+          input(type="password", name="pw", placeholder="Password")
+
       br
       .pw
-          span.label Confirm Password
-          br
-          input(type="password", name="pwc", placeholder="Confirm Password")
-
+        span.label Confirm Password
+        br
+        input(type="password", name="pwc", placeholder="Confirm Password")
+        
       br
-      input(type="submit", value="Login")
+      input(type="submit", value="Sign Up")
+
 
     .acont
-      a(href="/signup") I don't have an account
-      a(href="/forgotPassword") Forgot Password
+      a(href="/login") I already have an account
+      a(href="/cou") Conditions of use
+
+      

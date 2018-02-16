@@ -11,9 +11,7 @@
 body {
   padding: 0px;
   overflow-x: hidden;
-  /* background-image: url("/res/wallpaper.jpg");
-  background-size: 100%;*/
-  /* font: 16px "Lucida Grande", Helvetica, Arial, sans-serif; */
+  /* background-image: url("/res/wallpaper.jpg"); */
 }
 a {
   color: var(--accent);

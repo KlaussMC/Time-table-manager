@@ -1,0 +1,9 @@
+﻿#search {
+  width: 100vw;
+}
+#search input[type="text"] {
+  width: 80%;
+  border: 1px solid var(--accent);
+  background: #fff;
+  border-radius: 3px;
+}

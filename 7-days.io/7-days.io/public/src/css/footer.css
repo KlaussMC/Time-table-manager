@@ -1,10 +1,11 @@
 ﻿footer {
   width: 100vw;
-  display: block;
-  position: relative;
+  display: none;
+  position: absolute;
   float: left;
   background: #ddd;
   padding: 15px;
+  bottom:0px;
 }
 footer .group {
   width: 50%;
