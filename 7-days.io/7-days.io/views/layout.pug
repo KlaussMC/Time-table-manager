@@ -7,6 +7,7 @@ html
     link(rel='stylesheet', href='/src/css/auth.css')
     link(rel='stylesheet', href='/src/css/footer.css')
     link(rel='stylesheet', href='/src/css/help.css')
+    link(rel='stylesheet', href='/src/css/user.css')
     //auth styles all forms used for signup and login
   body
     nav.header
@@ -20,7 +21,16 @@ html
             div.signup
               a(href="/signup") Sign Up
           else
-            span= user
+            section.user-account-menu
+              section.user-data
+                sectin.user-profile-picture
+              form(action="/", method="POST").user-account-actions
+                input(type="hidden", name="un", value=user)
+                select(name="action", onchange="this.form.submit()")
+                  option(onclick="this.form.submit")#user= user
+                  option(onclick="this.form.submit") My Account
+                  option(onclick="this.form.submit()") Log Out
+
     br#padbar
     block content
 

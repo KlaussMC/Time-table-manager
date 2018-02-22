@@ -1,23 +1,38 @@
 ﻿extends layout
 
 block content
-  form(action="/account", method="POST")#login
+  form(action="/login", method="POST")#login
     h1 Login
     br
     div#container
-      .un
+      .pw
         span.label Username
         br
-        input(type="text", name="un", placeholder="Username")
+        if (data.un)
+          input(type="text", name="un", placeholder="Username", class="invalid")
+          span.invalid= data.un
+
+        else
+          input(type="text", name="un", placeholder="Username").valid
+
       br
-      .pw
-          span.label Password
-          br
-          input(type="password", name="pw", placeholder="Password")
+      .un
+        span.label Password
+        br
+        if (data.pw)
+          input(type="password", name="pw", placeholder="Password", class="invalid")
+          span.invalid= data.pw
+
+        else
+          input(type="password", name="pw", placeholder="Password").valid
+
 
       br
       input(type="submit", value="Login")
 
+    br
+    br
     .acont
+      br
       a(href="/signup") I don't have an account
       a(href="/forgotPassword") Forgot Password

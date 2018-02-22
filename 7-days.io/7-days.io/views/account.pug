@@ -2,7 +2,37 @@
 
 block content
   if (user)
-    h1= user
+    h1 Welcome #{user}
+
+    .timetables
+      ul#tables
+        li There are no Time tables here yet.
+
+        button(onclick="createTimeTable()") Create Time Table
+
+        script const createTimeTable = () => {ttmanager();};
+        script(src="/src/js/ttmanager.js")
+
+    section(style="display: none;")#editorField
+      .settings
+        input(type="text", name="name", placeholder="Name")
+        input(type="number", name="cols", value="7", placeholder="Days")#days
+        input(type="number", name="rows", value="6", placeholder="Periods")
+          
+      table
+        - for (let i = 0; i < 6; i++) {
+          tr
+            - for (let j = 0; j < 7; j++) {
+              td(onclick="editField(this)")
+                span.day= i
+                span.period= j
+            - }
+        - }
+      
+      button Save
+        img(src="/res/save.svg")
+      button Cancel
+        img(src="/res/cancel.svg")
 
   else
     h1 You need to 

@@ -11,7 +11,8 @@
 body {
   padding: 0px;
   overflow-x: hidden;
-  /* background-image: url("/res/wallpaper.jpg"); */
+  /*background-image: url("/res/wallpaper.jpg"); 
+  background-size: 100%;*/
 }
 a {
   color: var(--accent);
@@ -28,4 +29,7 @@ a:hover {
 }
 p {
   padding: 15px;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset;
 }

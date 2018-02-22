@@ -9,46 +9,47 @@ block content
         span.label Email
         br
         if (data.email)
-          input(type="email", name="email", placeholder="Email").invalid
-          span= data.email
+          input(type="email", name="email", placeholder="Email", class="invalid")
+          span.invalid= data.email
 
         else
-          input(type="email", name="email", placeholder="Email")
+          input(type="email", name="email", placeholder="Email").valid
 
       br
       .pw
         span.label Username
         br
         if (data.un)
-          input(type="text", name="un", placeholder="Username").invalid
-          // span= un
-            
+          input(type="text", name="un", placeholder="Username", class="invalid")
+          span.invalid= data.un
+
         else
-          input(type="text", name="un", placeholder="Username")
-            
+          input(type="text", name="un", placeholder="Username").valid
+
       br
       .un
         span.label Password
         br
         if (data.pw)
-          input(type="password", name="pw", placeholder="Password").invalid
-          // span= pw
+          input(type="password", name="pw", placeholder="Password", class="invalid")
+          span.invalid= data.pw
 
         else
-          input(type="password", name="pw", placeholder="Password")
+          input(type="password", name="pw", placeholder="Password").valid
 
       br
       .pw
         span.label Confirm Password
         br
-        input(type="password", name="pwc", placeholder="Confirm Password")
-        
+        input(type="password", name="pwc", placeholder="Confirm Password").valid
+
       br
       input(type="submit", value="Sign Up")
 
-
+    br
+    br
     .acont
+      br
       a(href="/login") I already have an account
       a(href="/cou") Conditions of use
 
-      

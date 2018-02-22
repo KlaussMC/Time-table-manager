@@ -45,6 +45,9 @@
     <Content Include="public\src\css\help.css">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="public\src\css\user.css">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="README.md" />
     <Content Include="views\header.pug">
       <SubType>Code</SubType>

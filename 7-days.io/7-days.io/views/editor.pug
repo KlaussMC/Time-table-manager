@@ -1,0 +1,19 @@
+﻿extends layout
+
+block content
+  div#newTimeTable
+    #title
+      div.editor
+        nav#nav
+
+          .settings
+            input(type="text", name="name", placeholder="Name")
+            input(type="number", name="cols", value="7", placeholder="Days")#days
+            input(type="number", name="rows", value="6", placeholder="Periods")
+
+
+
+          button Save
+            img(src="/res/save.svg")
+          button Cancel
+            img(src="/res/cancel.svg")

@@ -7,6 +7,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var krakendb = require("krakendb");
+var logmkr = require("logmaker");
+
+logmkr.enable();
 
 var routes = require('./routes/index');
 
@@ -44,6 +47,7 @@ if (app.get('env') === 'development') {
             message: err.message,
             error: err
         });
+        logmkr.log(err);
     });
 }
 

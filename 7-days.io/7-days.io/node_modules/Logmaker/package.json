@@ -1,0 +1,14 @@
+{
+  "name": "logmaker",
+  "version": "1.0.3",
+  "description": "A Module that very simply and easily logs things to files",
+  "main": "logger.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "log"
+  ],
+  "author": "Jacob Schneider <jakieschneider13@gmail.com>",
+  "license": "ISC"
+}

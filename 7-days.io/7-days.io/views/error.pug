@@ -3,7 +3,8 @@
 block content
 
   h1 Error #{error.status}
-  p #{message}
+  h2= message
+  p= err
   if (error.status == 404)
     h2 Error: the page wasn't found
     a(href="/") Head Home
