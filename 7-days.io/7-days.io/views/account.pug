@@ -1,6 +1,7 @@
 ﻿extends layout
 
 block content
+  link(rel='stylesheet', href='/src/css/timePicker.css')
   if (user)
     h1 Welcome #{user}
 
@@ -8,10 +9,11 @@ block content
       ul#tables
         li There are no Time tables here yet.
 
-        button(onclick="createTimeTable()") Create Time Table
+        button(onclick="ttmanager()") Create Time Table
 
         script const createTimeTable = () => {ttmanager();};
         script(src="/src/js/ttmanager.js")
+        script(src="/src/js/timePicker.js")
 
     section(style="display: none;")#editorField
       .settings
@@ -29,6 +31,26 @@ block content
             - }
         - }
       
+      .getData
+        .wrapper
+          h2 Edit Event / Subject
+          br
+          input(type="text", placeholder="Event / Subject Name")#name
+
+          div(value="", onclick="openTimePicker(this)").timePicker#to From
+          div(value="", onclick="openTimePicker(this)").timePicker#from To
+
+          input(type="text", placeholder="Event / Subject Location")#where
+
+          script const openTimePicker = obj => pickTime(obj);
+          script const closeDialog = () => document.querySelector(".getData").style.display = "none";
+
+        button(onclick="confirmEvent()").ok Ok
+        button(onclick="closeDialog()").cancel Cancel
+
+      .prompt
+        .clock
+
       button Save
         img(src="/res/save.svg")
       button Cancel

@@ -30,6 +30,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="public\src\js\timePicker.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="public\src\js\ttmanager.js" />
     <Compile Include="routes\index.js" />
     <Content Include="package.json" />
     <Content Include="public\res\icons\favicon.ico" />
@@ -49,6 +53,9 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="README.md" />
+    <Content Include="Unused Code\unusedTimeKeeper.txt">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="views\header.pug">
       <SubType>Code</SubType>
     </Content>
@@ -69,6 +76,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Unused Code\" />
     <Folder Include="public\" />
     <Folder Include="public\res\icons\" />
     <Folder Include="public\src\" />

@@ -10,3 +10,31 @@
 {"status":404}
 {"status":404}
 {"status":404}
+{"code":"PUG:INVALID_INDENTATION","msg":"Invalid indentation, you can use tabs or spaces but not both","line":37,"column":1,"filename":"C:\\Users\\Jacob\\Google Drive\\Coding\\Repos\\Time-table-manager\\7-days.io\\7-days.io\\views\\account.pug"}
+{"code":"PUG:INVALID_INDENTATION","msg":"Invalid indentation, you can use tabs or spaces but not both","line":37,"column":1,"filename":"C:\\Users\\Jacob\\Google Drive\\Coding\\Repos\\Time-table-manager\\7-days.io\\7-days.io\\views\\account.pug"}
+{"code":"PUG:INVALID_INDENTATION","msg":"Invalid indentation, you can use tabs or spaces but not both","line":37,"column":1,"filename":"C:\\Users\\Jacob\\Google Drive\\Coding\\Repos\\Time-table-manager\\7-days.io\\7-days.io\\views\\account.pug"}
+{"code":"PUG:INVALID_INDENTATION","msg":"Invalid indentation, you can use tabs or spaces but not both","line":38,"column":1,"filename":"C:\\Users\\Jacob\\Google Drive\\Coding\\Repos\\Time-table-manager\\7-days.io\\7-days.io\\views\\account.pug"}
+{"code":"PUG:UNEXPECTED_TEXT","msg":"unexpected text \"\t\t\t  \"","line":34,"column":22,"filename":"C:\\Users\\Jacob\\Google Drive\\Coding\\Repos\\Time-table-manager\\7-days.io\\7-days.io\\views\\account.pug"}
+{"code":"PUG:INVALID_INDENTATION","msg":"Invalid indentation, you can use tabs or spaces but not both","line":34,"column":1,"filename":"C:\\Users\\Jacob\\Google Drive\\Coding\\Repos\\Time-table-manager\\7-days.io\\7-days.io\\views\\account.pug"}
+{"code":"PUG:INVALID_INDENTATION","msg":"Invalid indentation, you can use tabs or spaces but not both","line":34,"column":1,"filename":"C:\\Users\\Jacob\\Google Drive\\Coding\\Repos\\Time-table-manager\\7-days.io\\7-days.io\\views\\account.pug"}
+{"code":"PUG:INVALID_INDENTATION","msg":"Invalid indentation, you can use tabs or spaces but not both","line":15,"column":1,"filename":"C:\\Users\\Jacob\\Google Drive\\Coding\\Repos\\Time-table-manager\\7-days.io\\7-days.io\\views\\layout.pug"}
+{"status":404}
+{"status":404}
+{"status":404}
+{"status":404}
+{"status":404}
+{"status":404}
+{"status":404}
+{"status":404}
+{"status":404}
+{"status":404}
+{"status":404}
+{"status":404}
+{"status":404}
+{"status":404}
+{"status":404}
+{"status":404}
+{"status":404}
+{"status":404}
+{"status":404}
+{"status":404}

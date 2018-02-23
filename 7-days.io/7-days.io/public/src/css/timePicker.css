@@ -1,0 +1,136 @@
+﻿* {
+  box-sizing: border-box;
+}
+#editorField {
+  position: absolute;
+  display: block;
+  top: 0;
+  background: #eee;
+  width: 100vw;
+  height: 100%;
+  padding-top: 75px;
+}
+#editorField table, tr, td {
+  border: 1px solid var(--accent);
+  border-collapse: collapse;
+}
+#editorField table {
+  width: 85%;
+  position: relative;
+  left: 7.5%;
+  margin: 5px;
+}
+#editorField table td {
+  padding: 10px;
+  text-align: center;
+}
+#editorField .getData {
+  display: none;
+  width: 50vw;
+  height: 50vh;
+  position: fixed;
+  left: 25vw;
+  top: 25vh;
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid var(--accent);
+}
+#editorField .getData #closebtn {
+  border: none;
+  background: none;
+  float: right;
+  padding: 5px;
+}
+#editorField .getData .wrapper {
+  position: relative;
+  display: block;
+  padding: 2.5%;
+}
+#editorField input {
+  border: none;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  padding: 5px;
+  margin: 5px;
+}
+.ok {
+  top: calc(100% - 25px);
+  margin-right: 15px;
+  margin-top: 15px;
+}
+.cancel {
+  top: calc(100% - 25px);
+  margin-top: 15px;
+  margin-right: 2px;
+}
+.ok, .cancel {
+  width: 25px;
+  background: #fff;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  float: right;
+  height: 25px;
+  width: 150px;
+}
+
+#editorField div.timePicker {
+  border: none;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  width: 10%;
+  padding: 5px;
+  margin: 5px;
+}
+.prompt {
+  position: fixed;
+  top: 30%;
+  left: 30%;
+  border: 1px solid var(--accent);
+  padding: 10px;
+  border-radius: 3px;
+  background: #fff;
+  display: none;
+}
+.prompt .clock {
+  background: var(--accent);
+  border-radius: 1000px;
+  height: 20vw;
+  width: 20vw;
+  color: #eee;
+}
+.prompt .clock .time span {
+  display: block;
+  position: absolute;
+  float: left;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  font-size: 12pt;
+  text-align: center;
+  padding-top: calc(18px - 6pt);
+  --radius: 7.5vw;
+}
+.prompt .clock .time {
+  padding-top: calc(50% - 20px);
+  padding-left: calc(50% - 20px);
+}
+
+.prompt .clock .time span:hover {
+
+  background: #49a;
+  transition: 0.25s;
+}
+
+.deg30 { transform: rotate(300deg) translate(var(--radius)) rotate(-300deg); }
+.deg60 { transform: rotate(330deg) translate(var(--radius)) rotate(-330deg); }
+.deg90 { transform: rotate(360deg) translate(var(--radius)) rotate(-360deg); }
+.deg120 { transform: rotate(30deg) translate(var(--radius)) rotate(-30deg); }
+.deg150 { transform: rotate(60deg) translate(var(--radius)) rotate(-60deg); }
+.deg180 { transform: rotate(90deg) translate(var(--radius)) rotate(-90deg); }
+.deg210 { transform: rotate(120deg) translate(var(--radius)) rotate(-120deg); }
+.deg240 { transform: rotate(150deg) translate(var(--radius)) rotate(-150deg); }
+.deg270 { transform: rotate(180deg) translate(var(--radius))  rotate(-180deg); }
+.deg300 { transform: rotate(210deg) translate(var(--radius))  rotate(-210deg); }
+.deg330 { transform: rotate(240deg) translate(var(--radius))  rotate(-240deg); }
+.deg360 { transform: rotate(270deg) translate(var(--radius))  rotate(-270deg); }
+
