@@ -30,6 +30,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="public\src\js\timeKeeper.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="public\src\js\timePicker.js">
       <SubType>Code</SubType>
     </Compile>
@@ -47,6 +50,9 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="public\src\css\help.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="public\src\css\timePicker.css">
       <SubType>Code</SubType>
     </Content>
     <Content Include="public\src\css\user.css">

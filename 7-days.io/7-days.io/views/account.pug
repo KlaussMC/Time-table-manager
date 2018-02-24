@@ -1,6 +1,7 @@
 ﻿extends layout
 
 block content
+  script(src="src/js/timeKeeper.js")
   link(rel='stylesheet', href='/src/css/timePicker.css')
   if (user)
     h1 Welcome #{user}
@@ -17,17 +18,39 @@ block content
 
     section(style="display: none;")#editorField
       .settings
-        input(type="text", name="name", placeholder="Name")
-        input(type="number", name="cols", value="7", placeholder="Days")#days
-        input(type="number", name="rows", value="6", placeholder="Periods")
+        input(type="text", name="name", placeholder="Name")#table-name
+        input(type="number", name="cols", value="7", placeholder="Days", onchange="days = this.value")#days
+        input(type="number", name="rows", value="6", placeholder="Periods", onchange="periods = this.value")#periods
+
+        //-div.uniformPeriod
+          .option(onclick="pickMe(1)")
+            span All periods will have the same length
+            div.radioButton
+          .option(onclick="pickMe(2)")
+            span Periods are the same for every day, however vary in length
+            div.radioButton
+          .option(onclick="pickMe(3)")
+            span All periods are different length
+            div(id="checked").radioButton
+
+          script.
+            let option = 3;
+            function pickMe(choice) {
+              option = choice;
+              for (let i = 0; i < document.getElementsByClassName("radioButton").length; i++) {
+                document.getElementsByClassName("radioButton")[i].removeAttribute("id");
+              }
+              document.getElementsByClassName("radioButton")[option - 1].setAttribute("id", "checked");
+            }
           
       table
         - for (let i = 0; i < 6; i++) {
-          tr
+          tr(class='day' + i)
             - for (let j = 0; j < 7; j++) {
-              td(onclick="editField(this)")
-                span.day= i
-                span.period= j
+              td(onclick="editField(this)", class="period" + j)
+                span.day Day #{i + 1}
+                br
+                span.period Period #{j + 1}
             - }
         - }
       
@@ -36,20 +59,29 @@ block content
           h2 Edit Event / Subject
           br
           input(type="text", placeholder="Event / Subject Name")#name
-
-          div(value="", onclick="openTimePicker(this)").timePicker#to From
-          div(value="", onclick="openTimePicker(this)").timePicker#from To
-
+          br
           input(type="text", placeholder="Event / Subject Location")#where
+
+          .timePickerField
+            div(value="", onclick="openTimePicker(this)").timePicker#to From
+            div(value="", onclick="openTimePicker(this)").timePicker#from To
 
           script const openTimePicker = obj => pickTime(obj);
           script const closeDialog = () => document.querySelector(".getData").style.display = "none";
+          script function Alert (str) { document.querySelector("#alert-wrapper").innerHTML = str; document.querySelector("#alert").style.display = "block"; }
 
         button(onclick="confirmEvent()").ok Ok
         button(onclick="closeDialog()").cancel Cancel
 
       .prompt
         .clock
+
+      #alert
+        #alert-wrapper
+
+        button(onclick="closeAlert()").ok OK
+
+        script const closeAlert = () => document.querySelector("#alert").style.display = "none";
 
       button Save
         img(src="/res/save.svg")

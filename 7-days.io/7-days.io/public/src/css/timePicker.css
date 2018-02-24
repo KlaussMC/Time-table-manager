@@ -9,6 +9,8 @@
   width: 100vw;
   height: 100%;
   padding-top: 75px;
+  -webkit-user-select: none;
+  user-select: none;
 }
 #editorField table, tr, td {
   border: 1px solid var(--accent);
@@ -52,6 +54,32 @@
   border-radius: 3px;
   padding: 5px;
   margin: 5px;
+}
+.radioButton {
+  float: left;
+  position: relative;
+  border-radius: 100px;
+  border: 1px solid var(--accent);
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin-top: 5px;
+  margin-right: 35
+}
+.option .radioButton#checked {
+  background: var(--accent);
+}
+#alert {
+  display: none;
+  width: 40vw;
+  height: 40vh;
+  background: #fff;
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  position: fixed;
+  top: 30vh;
+  left: 30vw;
+  padding: 15px;
 }
 .ok {
   top: calc(100% - 25px);
