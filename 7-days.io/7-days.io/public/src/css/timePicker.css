@@ -4,10 +4,10 @@
 #editorField {
   position: absolute;
   display: block;
-  top: 0;
   background: #eee;
+  top: 0;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   padding-top: 75px;
   -webkit-user-select: none;
   user-select: none;

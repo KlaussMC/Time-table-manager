@@ -18,41 +18,20 @@ block content
 
     section(style="display: none;")#editorField
       .settings
-        input(type="text", name="name", placeholder="Name")#table-name
-        input(type="number", name="cols", value="7", placeholder="Days", onchange="days = this.value")#days
-        input(type="number", name="rows", value="6", placeholder="Periods", onchange="periods = this.value")#periods
+        input(type="number", name="cols", value="7", placeholder="Days", onchange="changedays(this.value)")#days
+        input(type="number", name="rows", value="6", placeholder="Periods", onchange="changeperiods(this.value)")#periods
 
-        //-div.uniformPeriod
-          .option(onclick="pickMe(1)")
-            span All periods will have the same length
-            div.radioButton
-          .option(onclick="pickMe(2)")
-            span Periods are the same for every day, however vary in length
-            div.radioButton
-          .option(onclick="pickMe(3)")
-            span All periods are different length
-            div(id="checked").radioButton
-
-          script.
-            let option = 3;
-            function pickMe(choice) {
-              option = choice;
-              for (let i = 0; i < document.getElementsByClassName("radioButton").length; i++) {
-                document.getElementsByClassName("radioButton")[i].removeAttribute("id");
-              }
-              document.getElementsByClassName("radioButton")[option - 1].setAttribute("id", "checked");
-            }
-          
-      table
-        - for (let i = 0; i < 6; i++) {
-          tr(class='day' + i)
-            - for (let j = 0; j < 7; j++) {
-              td(onclick="editField(this)", class="period" + j)
-                span.day Day #{i + 1}
-                br
-                span.period Period #{j + 1}
-            - }
-        - }
+      .tableCont
+        table
+          - for (let i = 0; i < 7; i++) {
+            tr(class='day' + i)
+              - for (let j = 0; j < 6; j++) {
+                td(onclick="editField(this)", class="period" + j)
+                  span.day Day #{i + 1}
+                  br
+                  span.period Period #{j + 1}
+              - }
+          - }
       
       .getData
         .wrapper
@@ -63,8 +42,8 @@ block content
           input(type="text", placeholder="Event / Subject Location")#where
 
           .timePickerField
-            div(value="", onclick="openTimePicker(this)").timePicker#to From
-            div(value="", onclick="openTimePicker(this)").timePicker#from To
+            div(value="", onclick="openTimePicker(this)").timePicker#from From
+            div(value="", onclick="openTimePicker(this)").timePicker#to To
 
           script const openTimePicker = obj => pickTime(obj);
           script const closeDialog = () => document.querySelector(".getData").style.display = "none";
@@ -74,6 +53,8 @@ block content
         button(onclick="closeDialog()").cancel Cancel
 
       .prompt
+        input(type="Checkbox")#amorpm
+        label(for="amorpm") PM
         .clock
 
       #alert
