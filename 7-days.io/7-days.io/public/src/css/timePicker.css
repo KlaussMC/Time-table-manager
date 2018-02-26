@@ -7,10 +7,11 @@
   background: #eee;
   top: 0;
   width: 100vw;
-  height: 100vh;
   padding-top: 75px;
   -webkit-user-select: none;
   user-select: none;
+  overflow-x: auto;
+  overflow-y: auto;
 }
 #editorField table, tr, td {
   border: 1px solid var(--accent);

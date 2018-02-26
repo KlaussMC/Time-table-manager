@@ -20,7 +20,10 @@ const hrsSet = obj => hrs = Math.round(obj.innerHTML);
 const mnsSet = obj => mns = Math.round(obj.innerHTML);
 const action = obj => { if (hrs == null) { step2(obj) } else { finish(obj) } };
 
-const setTime = obj => obj.innerHTML = hrs + ":" + mns;
+const setTime = obj => {
+  let am = !document.querySelector("#amorpm").checked;
+  obj.innerHTML = (am) ? hrs + ":" + mns : addTimes(hrs + ":" + mns, "12:00");
+};
 
 function step2(obj) {
   hrsSet(obj);

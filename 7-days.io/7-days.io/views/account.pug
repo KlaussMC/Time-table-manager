@@ -18,8 +18,8 @@ block content
 
     section(style="display: none;")#editorField
       .settings
-        input(type="number", name="cols", value="7", placeholder="Days", onchange="changedays(this.value)")#days
-        input(type="number", name="rows", value="6", placeholder="Periods", onchange="changeperiods(this.value)")#periods
+        input(type="number", name="cols", value="7", placeholder="Days", onchange="changedays(this.value)", min="1", max="20")#days
+        input(type="number", name="rows", value="6", placeholder="Periods", onchange="changeperiods(this.value)", min="1", max="20")#periods
 
       .tableCont
         table
@@ -46,7 +46,7 @@ block content
             div(value="", onclick="openTimePicker(this)").timePicker#to To
 
           script const openTimePicker = obj => pickTime(obj);
-          script const closeDialog = () => document.querySelector(".getData").style.display = "none";
+          script const closeDialog = () => resetEditor();
           script function Alert (str) { document.querySelector("#alert-wrapper").innerHTML = str; document.querySelector("#alert").style.display = "block"; }
 
         button(onclick="confirmEvent()").ok Ok
