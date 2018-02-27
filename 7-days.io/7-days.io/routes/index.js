@@ -1,175 +1,132 @@
-﻿'use strict';
-var krakendb = require("krakendb");
-var rand = require("kraken-random");
-var logmkr = require("logmaker");
-var express = require('express');
-var router = express.Router();
-
-logmkr.enable();
-
-if (!krakendb.dbexists("users")) {
-  krakendb.newdb("users", ["email", "password", "loggedIn", "userid"])
-  krakendb.exportdb("users");
-} else {
-  krakendb.loaddb("users");
-  krakendb.activeDB("users");
-}
-
+﻿"use strict";
+var krakendb = require("krakendb")
+  , rand = require("kraken-random")
+  , logmkr = require("logmaker")
+  , express = require("express")
+  , router = express.Router();
+logmkr.enable(),
+  krakendb.dbexists("users") ? (krakendb.loaddb("users"),
+    krakendb.activeDB("users")) : (krakendb.newdb("users", ["email", "password", "loggedIn", "userid"]),
+      krakendb.exportdb("users"));
 let title = "7-days.io";
-
-/* GET home page. */
-router.get('/', function (req, res) {
-    res.render('index', { title: title });
-});
-router.get('/account', function (req, res) {
-  res.render('account', { title: title });
-});
-router.get('/help', function (req, res) {
-  res.render('help', { title: title });
-});
-router.get('/login', function (req, res) {
-  res.render('login', { title: title, data: { un: null, pw: null } });
-});
-router.get('/signup', function (req, res) {
-  res.render('signup', { title: title, data: { email: null, un: null, pw: null } });
-});
-router.get('/editor', function (req, res) {
-  res.render('editor', { title: title });
-});
-
-
-router.post('/login', function (req, res, next) {
-  var data = {
-    un: req.body.un,
-    pw: req.body.pw
-  }
-  let err = login(data);
-  if (err === true) {
-    res.render("account", { title: title, user: req.body.un })
-    // res.redirect("account", { title: title, user: req.body.un })
-  } else {
-    res.render("login", { title: title, data: err })
-  }
-})
-router.post('/signup', function (req, res, next) {
-  var data = {
-    un: req.body.un,
-    email: req.body.email.toLowerCase(),
-    pw: req.body.pw,
-    pwc: req.body.pwc
-  }
-
-  var err = validate(data);
-
-  if (err === true) {
-    res.render("account", { title: title, user: req.body.un })
-    // res.redirect("account", { title: title, user: req.body.un })
-  } else {
-    res.render("signup", { title: title, data: err })
-  }
-});
-
-/*
-  Notification.requestPermission(function (permission) {
-      // If the user accepts, let's create a notification
-      if (permission === "granted") {
-        var notification = new Notification("Hi there!");
+router.get("/", function (a, b) {
+  b.render("index", {
+    title: title
+  })
+}),
+  router.get("/account", function (a, b) {
+    b.render("account", {
+      title: title
+    })
+  }),
+  router.get("/help", function (a, b) {
+    b.render("help", {
+      title: title
+    })
+  }),
+  router.get("/login", function (a, b) {
+    b.render("login", {
+      title: title,
+      data: {
+        un: null,
+        pw: null
       }
-    });
-  //Send notification
-*/
-
-router.post("/", function (req, res, next) {
-  krakendb.setItem(req.body.un, "loggedIn", "f");
-  krakendb.exportdb("users")
-  res.redirect("/")
-})
-function login(data) {
-  let fail = {
+    })
+  }),
+  router.get("/signup", function (a, b) {
+    b.render("signup", {
+      title: title,
+      data: {
+        email: null,
+        un: null,
+        pw: null
+      }
+    })
+  }),
+  router.get("/editor", function (a, b) {
+    b.render("editor", {
+      title: title
+    })
+  }),
+  router.post("/login", function (a, b) {
+    var d = {
+      un: a.body.un,
+      pw: a.body.pw
+    };
+    let e = login(d);
+    !0 === e ? b.render("account", {
+      title: title,
+      user: a.body.un
+    }) : b.render("login", {
+      title: title,
+      data: e
+    })
+  }),
+  router.post("/signup", function (a, b) {
+    var d = {
+      un: a.body.un,
+      email: a.body.email.toLowerCase(),
+      pw: a.body.pw,
+      pwc: a.body.pwc
+    }
+      , e = validate(d);
+    !0 === e ? b.render("account", {
+      title: title,
+      user: a.body.un
+    }) : b.render("signup", {
+      title: title,
+      data: e
+    })
+  }),
+  router.post("/", function (a, b) {
+    krakendb.setItem(a.body.un, "loggedIn", "f"),
+      krakendb.exportdb("users"),
+      b.redirect("/")
+  });
+function login(a) {
+  let b = {
     un: null,
     pw: null
-  }
-
-  // login
-
-  if (krakendb.indb(data.un)) {
-    if (krakendb.getItem(data.un, "password") == data.pw) {
-      //continue
-
-      krakendb.setItem(data.un, "loggedIn", "t");
-      krakendb.exportdb("users")
-
-      fail = true;
-    } else {
-      //incorrect password
-      fail.pw = "Incorrect password"
-    }
-  } else {
-    //usr does not exist
-    fail.un = "User does not exist"
-  }
-
-  return fail;
+  };
+  return krakendb.indb(a.un) ? krakendb.getItem(a.un, "password") == a.pw ? (krakendb.setItem(a.un, "loggedIn", "t"),
+    krakendb.exportdb("users"),
+    b = !0) : b.pw = "Incorrect password" : b.un = "User does not exist",
+    b
 }
-function validate(data) {
-  let fail = {
+function validate(a) {
+  let b = {
     un: null,
     email: null,
     pw: null
-  }
-  if (!krakendb.indb(data.email)) {
-    if (!krakendb.indb(data.un)) {
-      if (data.pw == data.pwc) {
-        if (data.pw.length >= 6) {
-
-          //continue
-
-          logmkr.log("Sign up attempt");
-
-          krakendb.newEntry(data.un);
-          
-          krakendb.setItem(data.un, "email", data.email)
-          krakendb.setItem(data.un, "password", data.pw)
-          krakendb.setItem(data.un, "loggedIn", "t");
-
-          let str = "";
-          let chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_-*";
-          for (let i = 0; i < rand.random(5, 25); i++) {
-            str += chars[Math.floor(rand.random(chars.length))];
-          }
-          krakendb.setItem(data.un, "userid", str)
-
-          krakendb.exportdb("users")
-
-          fail = true;
-        } else {
-          //password shorter than 6
-          fail.pw = "At least 6 characters are required"
-        }
-      } else {
-        //passwords do not match
-        fail.pw = "Passwords do not match"
-      }
-    } else {
-      //username taken
-      fail.un = "Username taken"
-    }
-  } else {
-    //email taken
-    fail.email = "Email is already in use";
-  }
-
-  return fail;
+  };
+  if (!!krakendb.indb(a.email))
+    b.email = "Email is already in use";
+  else if (!!krakendb.indb(a.un))
+    b.un = "Username taken";
+  else if (a.pw != a.pwc)
+    b.pw = "Passwords do not match";
+  else if (6 <= a.pw.length) {
+    logmkr.log("Sign up attempt"),
+      krakendb.newEntry(a.un),
+      krakendb.setItem(a.un, "email", a.email),
+      krakendb.setItem(a.un, "password", a.pw),
+      krakendb.setItem(a.un, "loggedIn", "t");
+    let c = ""
+      , d = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_-*";
+    for (let e = 0; e < rand.random(5, 25); e++)
+      c += d[Math.floor(rand.random(d.length))];
+    krakendb.setItem(a.un, "userid", c),
+      krakendb.exportdb("users"),
+      b = !0
+  } else
+    b.pw = "At least 6 characters are required";
+  return b
 }
-
-
-function addUsrItem(user) {
-  var str = "";
-  var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_-*";
-  for (let i = 0; i < Math.floor(Math.random() * 25); i++) {
-    str += chars[Math.floor(Math.random() * chars.length)];
-  }
-  krakendb.setItem(user, "userid", str)
+function addUsrItem(a) {
+  var b = ""
+    , c = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_-*";
+  for (let d = 0; d < Math.floor(25 * Math.random()); d++)
+    b += c[Math.floor(Math.random() * c.length)];
+  krakendb.setItem(a, "userid", b)
 }
-
 module.exports = router;

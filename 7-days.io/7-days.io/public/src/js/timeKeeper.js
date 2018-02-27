@@ -1,51 +1,33 @@
-﻿function addTimes(time1, time2) {
-  let newTime = 0;
-
-  let t1 = time1.split(":");
-  let t2 = time2.split(":");
-
-  t1[0] = Math.round(t1[0])
-  t1[1] = Math.round(t1[1])
-  t2[0] = Math.round(t2[0])
-  t2[1] = Math.round(t2[1])
-
-  newTime += t1[0] + t2[0];
-
-  let mins = t1[1] + t2[1];
-
-  while (mins > 60) {
-    newTime += 1;
-    mins -= 60;
-  }
-  newTime += ":" + mins;
-
-  return newTime
+﻿function addTimes(a, b) {
+  let c = 0
+    , d = a.split(":")
+    , e = b.split(":");
+  d[0] = Math.round(d[0]),
+    d[1] = Math.round(d[1]),
+    e[0] = Math.round(e[0]),
+    e[1] = Math.round(e[1]),
+    c += d[0] + e[0];
+  let f = d[1] + e[1];
+  for (; 60 < f;)
+    c += 1,
+      f -= 60;
+  return c += ":" + f,
+    c
 }
-function subTimes(time1, time2) {
-  let newTime = 0;
-
-  let t1 = time1.split(":");
-  let t2 = time2.split(":");
-
-  t1[0] = Math.round(t1[0])
-  t1[1] = Math.round(t1[1])
-  t2[0] = Math.round(t2[0])
-  t2[1] = Math.round(t2[1])
-
-  newTime = t1[0] - t2[0];
-
-  let mins = t1[1] - t2[1];
-
-  while (mins < 0) {
-    newTime -= 1;
-    mins += 60;
-  }
-  newTime += ":" + mins;
-  return newTime;
+function subTimes(a, b) {
+  let c = 0
+    , d = a.split(":")
+    , e = b.split(":");
+  d[0] = Math.round(d[0]),
+    d[1] = Math.round(d[1]),
+    e[0] = Math.round(e[0]),
+    e[1] = Math.round(e[1]),
+    c = d[0] - e[0];
+  let f = d[1] - e[1];
+  for (; 0 > f;)
+    c -= 1,
+      f += 60;
+  return c += ":" + f,
+    c
 }
-function convertToReadableTime(hours, minutes) {
-  return hours + ":" + minutes;
-}
-function getTimeGap(time1, time2) {
-  return subTimes(time1, time2)
-}
+const rt = (a, b) => { return a + ":" + b }
