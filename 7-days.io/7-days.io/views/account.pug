@@ -1,6 +1,12 @@
 ﻿extends layout
 
 block content
+
+  //-script(src="/src/js/socket.io.js")
+  //-script.
+    var socket;
+    window.addEventListener("load", () => socket = io.connect(window.location.href.split("/")[0] + "//" + window.location.href.split("/")[2]));
+
   script(src="src/js/timeKeeper.js")
   link(rel='stylesheet', href='/src/css/timePicker.css')
   if (user)
@@ -60,14 +66,16 @@ block content
       #alert
         #alert-wrapper
 
-        button(onclick="closeAlert()").ok OK
+      button(onclick="closeAlert()").ok OK
+      
+      script const closeAlert = () => document.querySelector("#alert").style.display = "none";
 
-        script const closeAlert = () => document.querySelector("#alert").style.display = "none";
-
-      button Save
+      button(onclick="save()") Save
         img(src="/res/save.svg")
       button Cancel
         img(src="/res/cancel.svg")
+
+      //- script const save = () => socket.emit("saveTable", exportTable());
 
   else
     h1 You need to 

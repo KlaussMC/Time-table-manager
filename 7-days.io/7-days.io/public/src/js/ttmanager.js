@@ -15,8 +15,7 @@ function editField(a) {
 }
 const getUserData = () => {
   0 < fields.length && (document.querySelector(".getData").style.display = "block")
-}
-  ;
+};
 function parseData() {
   let a = {
     name: document.querySelector("#name").value,
@@ -37,16 +36,14 @@ const confirmEvent = () => {
   }
   doFinalCheck(),
     resetEditor()
-}
-  ;
+};
 function doFinalCheck() {
   let a, b;
   for (a = 1; a <= days; a++)
     for (b = 1; b < periods; b++)
       if (1 < b) {
         const g = getPeriodTimes(a, b) ? () => {
-          let tg = subTimes(getPeriodTimes(a, b).to, getPeriodTimes(a, b).from)
-          let h = addTimes(getPeriodTimes(a, b).to, tg);
+          let h = addTimes(getPeriodTimes(a, b).to, subTimes(getPeriodTimes(a, b).to, getPeriodTimes(a, b).from));
           h ? () => {
             setPeriodTimes(a, b, getPeriodTimes(a, b).to, h)
           } : () => {
@@ -70,9 +67,10 @@ function getPeriodTimes(a, b) {
     f.from = document.getElementsByClassName("day" + a)[0].childNodes[b - 1].getAttribute("from"),
     f.to = document.getElementsByClassName("day" + a)[0].childNodes[b - 1].getAttribute("to")
   } catch (g) {
-    return null
+    return null;
   }
-  return f
+  f = f.to && f.from ? f : null;
+  return f;
 }
 const changedays = a => {
   days = a, updateTable()

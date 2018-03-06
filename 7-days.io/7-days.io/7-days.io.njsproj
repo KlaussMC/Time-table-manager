@@ -38,6 +38,9 @@
     </Compile>
     <Compile Include="public\src\js\ttmanager.js" />
     <Compile Include="routes\index.js" />
+    <Compile Include="Unused Code\unused ttmanager.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Content Include="package.json" />
     <Content Include="public\res\icons\favicon.ico" />
     <Content Include="public\res\wallpaper.jpg" />

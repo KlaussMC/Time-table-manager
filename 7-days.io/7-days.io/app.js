@@ -9,6 +9,9 @@ var bodyParser = require('body-parser');
 var krakendb = require("krakendb");
 var logmkr = require("logmaker");
 
+//var socket = require("socket.io");
+//var io = socket(server);
+
 logmkr.enable();
 
 var routes = require('./routes/index');
@@ -66,3 +69,10 @@ app.set('port', process.env.PORT || 80);
 var server = app.listen(app.get('port'), function () {
     debug('Express server listening on port ' + server.address().port);
 });
+
+//io.sockets.on('connection', function (socket) {
+//  logmkr.log(socket.handshake.address);
+//  socket.on("saveTable", table => {
+//    logmkr.log(table);
+//  })
+//})
